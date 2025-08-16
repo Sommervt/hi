@@ -103,7 +103,7 @@ async def main() -> None:
     if not access_token:
         # access_token = os.getenv("GITHUB_TOKEN")
         raise Exception("A personal access token is required to proceed!")
-    user = os.getenv"Sommervt"
+    user = os.getenv("GITHUB_ACTOR")
     if user is None:
         raise RuntimeError("Environment variable GITHUB_ACTOR must be set.")
     exclude_repos = os.getenv("EXCLUDED")
@@ -134,5 +134,6 @@ async def main() -> None:
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 
 
